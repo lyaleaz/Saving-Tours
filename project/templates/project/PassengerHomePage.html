@@ -1,0 +1,266 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    </head>
+<body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="static/logo.png" alt="">
+            </a>
+          
+            <nav class="navbar">
+                       
+
+                <a href="/PassengerNotification">Notification</a>
+                <a href="/PMyTrip">My Trip</a>
+                <a href="{% url 'PassengerProfile' user.id %}">Profile</a>
+                <a href="{% url 'PassengerPassword' user.id %}">Change Password</a>
+
+                <a href="/logoutUser">LogOut</a>
+
+
+
+
+
+               
+            
+            </nav>
+          
+
+
+        </header>
+        <div class="wrapper">
+            <div class="welcome">
+                    <p><em>Welcome To "SAVING TOURS" </em></p>
+        
+        
+              
+        
+
+
+            </div>
+            <div class="header1">
+                <p>Srearch for line</p>
+            </div>
+            <div class="container">
+            
+                <div class="search_warp search_warp_1" style="margin-bottom: 5px;">
+               <div class="tag" style="
+                               padding:60px;
+                      font-size: 20px;
+                      margin-right: 10px;
+                      margin-top:-10px;
+                                              margin-left: -250px;
+                         
+                         ">from the city</div>
+                    <div class="search_box">
+                
+                        <input type="text" name="fromm"class="input" placeholder="from the city.">
+
+
+
+                    </div>
+                       
+                       
+
+
+                </div>
+                <div class="search_warp search_warp_1">
+                <div class="tag" style="
+                          padding:60px;
+                      font-size: 20px;
+                      margin-right: 10px;
+                      margin-top:-110px;
+                    margin-left: -250px;
+
+                         ">to the city</div>
+                    <div class="search_box">
+        
+                                <input type="text" name="tooo" class="input" placeholder="to the city">
+                     
+                            <button  class="btn btn_common" type="submit" name="submit" value="search">
+        
+                
+
+
+                    </div>
+                    
+
+                </div>
+                
+               
+            </div>
+
+
+
+        </div>
+
+
+      
+
+
+
+    </body>
+</form>
+
+
+    <style>
+            .welcome {
+                background-color: #af2d18;
+    color: white;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    font-size: x-large;
+    margin-top: 105px;
+}
+        .header1{
+            width: 1000px;
+            padding: 20px;
+          
+            margin: 25px auto;
+            border-radius: 5px;
+            text-align: center;
+        
+        }
+        .header1 p{
+            font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 61px;
+        }
+        .container .input{
+            border: 5px;
+            outline: none;
+            color: #010103;
+        }
+        .search_warp{
+            width: 500px;
+            margin: 30px auto;
+        }
+        .search_warp .search_box{
+            position: relative;
+            width: 500px;
+            height: 60px;
+
+        }
+       
+        .search_warp .search_box .input{
+            background-color:black;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+                margin-top: -90px;
+
+        }
+        .search_warp .search_box .btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 100%;
+            background: #848f99;
+            z-index: 1 ;
+            cursor: pointer;
+                margin-top: -90px;
+
+        }
+      
+        .search_warp .search_box .btn.btn_common .fas{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 20px;
+
+        }
+
+
+
+
+                  
+        :root{
+            --main-color:#6283a1;
+            --black: #13131a;
+            --bg:#010103;
+            --border: .1rem solid rgb(4, 62, 80);
+        }
+        *{
+            font-family: 'Roboto',sans-serif;
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+
+        }
+        html::-webkit-scrollbar-thumb{
+            background: rgb(3, 1, 109);
+            border-radius: 5rem;
+
+        }
+
+        body{
+            background:#6283a1;
+        }
+        .header{
+            background: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+
+        }
+        .header .logo img{
+            height: 6rem;
+            
+        }
+        .header .navbar a{
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            color:#fff;
+
+
+        }
+        .header .navbar a:hover{
+            color: var(--main-color);
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+    
+
+
+
+    </style>
+    
+</html>

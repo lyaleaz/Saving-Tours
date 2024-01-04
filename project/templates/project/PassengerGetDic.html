@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'project/test.css' %}" />
+        <script src="{% static 'project/test.js' %}"></script>
+
+    </head>
+
+    <body>
+
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="static/logo.png" alt="">
+            </a>
+            <nav class="navbar">
+
+                <a href="/PassengerHomePage">Home</a>
+                <a href="/PassengerNotification">Notification</a>
+                <a href="/PMyTrip">My Trip</a>
+                <a href="{% url 'PassengerProfile' user.id %}">Profile</a>
+                <a href="{% url 'PassengerPassword' user.id %}">Change Password</a>
+                <a href="/logoutUser">LogOut</a>
+            </nav>
+
+
+        </header>
+        <br>
+        <br>
+                <div id="map"></div>
+        <div class="container">
+            <form action="#" method="POST" >
+                {% csrf_token %}
+                     <div class="form-control">
+                    <div class="tag">To</div>
+                    <output type="text" name="to">
+                        <input type="text" id="toto" name="toto" value="{{too}}" readonle>
+                </div>
+                     <div class="form-control">
+                    <div class="tag">From</div>
+                    <output type="text" name="from">
+                        <input type="text" id="frfr" name="frfr" value="{{fromm}}" readonle>
+
+                </div>
+
+                <div class="form-control">
+                    <div class="tag"> Bus Number</div>
+                    <output type="text" name="bus-number" >
+                    <h3> {{busnum}}</h3>
+                </div>
+
+                <div class="form-control">
+                    <div class="tag">Company</div>
+                    <output type="text" name="Company" >
+                        <h3> {{buscompany}}</h3>
+                </div>
+
+                <div class="form-control">
+                    <div class="tag">Route</div>
+                    <output type="text" name="route">
+                        <h3> {{busstation}}</h3>
+                </div>
+                  <div class="form-control">
+                    <div class="tag">Date time</div>
+                    <output type="text" name="route">
+                        <input type="datetime-local" value="{{order.pick_up_datetime|date:'Y-m-d'}}T{{order.pick_up_datetime|time:'H:i:s'}}" id="deptime" name="deptime" onchange="updatefunc()">
+                </div>
+                <div class="form-control">
+                    <div class="tag"> bus line</div>
+                    <input type="text"  name="full_name" value="{{busnum}}" readonly>
+                </div>
+
+                <div class="form-control" >
+                    <div class="tag">station from</div>
+                    <input type="text" id="fromst" name="fromst" readonly>
+                </div>
+
+               <div class="form-control">
+                    <div class="tag">station to</div>
+                    <input type="text"  id="tost" name="tost" readonly>
+                </div>
+                
+                 <div class="form-control" >
+                    <input type="submit" class="btn submit-btn" value="Save">
+
+                </div>
+
+                <table class="tablee">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Check</th>
+     <th scope="col">Station</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in stations%}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><input type="checkbox" id="sta" name="sta" value="{{forloop.counter}}"  onclick="stcheck({{forloop.counter}})"></td>
+      <td>
+      <label id="{{forloop.counter}}" >{{i}}</label>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+                
+
+                
+
+               
+           
+
+                
+                   
+            </form>
+           
+
+        </div>
+                 
+
+
+      
+
+    
+
+
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsUJ0P3eueaI2IdbInU6P4I6amqPyYHUI&callback=initMap&v=weekly"
+      async
+    ></script>
+
+    </body>
+
+<style>
+            .header{
+            background: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 5%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+
+        }
+
+.header .navbar a{
+    margin: 01rem;
+    font-size: 1.2rem;
+    color:#fff;
+
+
+}
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+ .submit-btn{
+            background-color: #AF2D18;
+    border: none;
+    width: 10%;
+    padding: 1rem;
+  
+    color: #fff;
+    cursor: pointer;
+        }
+        .submit-btn:hover{
+            background-color: #6283a1;
+        }
+
+
+
+</style>
+
+
+
+
+
+</html>

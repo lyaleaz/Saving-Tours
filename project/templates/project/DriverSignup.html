@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="{% static 'admin.css'%}">
+    <title>Driver's Singin Page</title>
+</head>
+<body style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="wrapper" >
+                {% for massage in messages %}
+                <p class="alert alert-danger">{{message}}</p>
+                {% endfor %}
+                <div class="title"  style="font-size: 25px;
+                 width: 800px;
+                background-color: rgb(26, 13, 51);
+                margin: auto;
+                color: #FFFFFF;
+                overflow: hidden;
+                text-align: center;
+                border-radius: 15px 15px 0px 0px;
+                  margin-left: 250px;
+                ">
+                    Singup Here
+                </div>
+                <div class="formm" style="
+                
+                background-color: rgba(172, 83, 83, 0.5);
+                width: 800px;
+                overflow: hidden;
+                padding: 10px;
+                margin-left: 250px;
+                ">
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 20px;
+                                                    font-weight: 700;">
+                        <label>First Name</label>
+                        <input type="text" id="DFname" name="DFname" style="  position: relative;
+                                                                             left: 200px;
+                                                                             top: -37px;
+                                                                             line-height: 40px;
+                                                                              width: 532px;
+                                                                              border-radius: 6px;
+                                                                             ">
+                    </div>
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 22px;
+                                                    font-weight: 700;" >
+                        <label>Last Name</label>
+                        <input type="text" id="DLname" name="DLname" style="  position: relative;
+                                                                             left: 200px;
+                                                                             top: -37px;
+                                                                             line-height: 40px;
+                                                                              width: 532px;
+                                                                              border-radius: 6px;
+                                                                             padding: 0 22px;">
+
+                    </div>
+
+
+                    <div class="inputfield"style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>Company'sName</label>
+                        <input type="text" id="companyname" name="companyname" style="  position: relative;
+                                                                             left: 200px;
+                                                                             top: -37px;
+                                                                             line-height: 40px;
+                                                                              width: 532px;
+                                                                              border-radius: 6px;
+                                                                             padding: 0 22px;">
+                    </div>
+
+                
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 18px;
+                                                    font-weight: 700;">
+                        <label>Email Address</label>
+                        <input type="email" id="De" name="Demail" style="  position: relative;
+                                                                             left: 200px;
+                                                                             top: -37px;
+                                                                             line-height: 40px;
+                                                                              width: 532px;
+                                                                              border-radius: 6px;
+                                                                             padding: 0 22px;">
+                    </div>
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                   color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>Phone Number</label>
+                        <input type="text" id="Df" name="Dhone" style="  position: relative;
+                                                                             left: 200px;
+                                                                             top: -37px;
+                                                                             line-height: 40px;
+                                                                              width: 532px;
+                                                                              border-radius: 6px;
+                                                                             padding: 0 22px;">
+                    </div>
+
+
+                    <div class="inputfield terms" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 18px;
+                                                    font-weight: 700;">
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <input type="submit" value="Next" class="btn" style="
+                        width: 250%;
+                        padding: 8px 10px;
+                        font-size: 25px;
+                         border: 0px;
+                         background: rgb(26, 13, 51);
+                         color: #fff;
+                         cursor: pointer;
+                          border-radius: 3px;
+                            outline: none;
+                         size: 16px;
+                          margin-left:400px;
+                        ">
+                    </div>
+                </div>
+            </div>
+           </div>
+        </form>
+     
+    </body>
+</html>
+

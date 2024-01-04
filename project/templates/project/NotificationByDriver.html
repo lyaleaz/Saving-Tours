@@ -1,0 +1,201 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    </head>
+<body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="static/logo.png" alt="">
+            </a>
+          
+            <nav class="navbar">
+                <a href="{% url 'PassengerPassword' user.id %}">Change Password</a>
+                <a href="/PassengerHomePage">Home</a>
+                <a href="/logoutUser">LogOut</a>
+                <a href="/PassengerNotification">Notification</a>
+                <a href="/PMyTrip">My Trip</a>
+                <a href="{% url 'PassengerProfile' user.id %}">Profile</a>
+
+               
+            
+            </nav>
+          
+
+
+        </header>
+        <div class="header1">
+            <p>Your bus Notification:</p>
+            <tr>
+        {% for update in updates %}                
+        <td> <h2> {{update.message}} </h2> </td>
+        {% endfor %}
+                </tr>
+</div>
+
+
+
+       
+
+
+    </body>
+</form>
+
+
+<style>
+
+        .header1 p{
+                        height: 500px;
+                        color: #AF2D18;
+                        text-decoration: underline;
+                        margin-left:10px;
+                        overflow: hidden;
+                        font-family: "Lucida Console", monospace;
+                        font-weight: bold;
+                        font-size: 1.7rem;
+        }
+     
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+
+        }
+        .contact-form{
+            width: 250px;
+
+        }
+        input textarea{
+            width: 100%;
+            background-color: aliceblue;
+            border: none;
+            padding: 0.5rem;
+            margin-left: 200px;
+
+        }
+        input:focus{
+            outline: none;
+
+        }
+        .tag{
+               padding: 51px 0;
+    font-size: 20px;
+    margin-right: -121px;
+    margin-left: 87px;
+        }
+        .container{
+            background-color: #646569b7;
+            padding: 2rem;
+            border-radius: 10px;
+            overflow: none;
+            display: flex;
+
+        }
+        .content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 800px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  margin-left:50px;
+}
+
+.content-table thead tr {
+  font-family: sans-serif; /* Change your font family */
+  background-color: #AF2D18;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th{
+  width: 180px;
+  padding: 20px;
+}
+.content-table td {
+  font-family: sans-serif; /* Change your font family */
+  padding: 12px 15px;
+}
+
+     
+
+
+
+
+
+
+        :root{
+            --main-color:#6283a1;
+            --black: #13131a;
+            --bg:#010103;
+            --border: .1rem solid rgb(4, 62, 80);
+        }
+        
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+
+        }
+        html::-webkit-scrollbar-thumb{
+            background: rgb(3, 1, 109);
+            border-radius: 5rem;
+
+        }
+
+        body{
+            background:#AF2D18;
+        }
+        .header{
+            background: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+
+        }
+        .header .logo img{
+            height: 6rem;
+            
+        }
+        .header .navbar a{
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            color:#fff;
+        }
+        .header .navbar a:hover{
+            color: #fff;
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+    
+
+
+
+</style>
+    
+</html>

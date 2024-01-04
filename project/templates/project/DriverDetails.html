@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+</style>
+    </head>
+<body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+  <header class="header">
+    <a href="#" class="logo">
+        <img src="static/logo.png" alt="">
+
+
+    </a>
+
+    <nav class="navbar">
+        <a href="/deluser/">Passengers</a>
+        <a href="/Request/">Request</a>
+        <a href="/AddNewDriver/">Add New Driver</a>
+        <a href="/SendMail/">Send Email</a>
+        <a href="/AdminReports">Reports</a>
+        <a href="/logoutUser">LogOut</a>
+        <a href="/AdminHomePage">Home</a>
+
+    </nav>
+
+
+</header>
+
+
+        <table class="content-table">
+          <br>
+          <br>      
+          <br>      
+
+  <thead>
+ 
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Company</th>
+      <th>Phone</th>
+      <th>Worker's certificate</th>
+      <th>Driving License</th>
+    </tr>
+  </thead>
+  {% for user in users%}
+  <tr>
+    <td><b><h2> {{user.username}}  </h2></b></td>
+    <td><b><h2>{{user.email}}</h2></b></td>
+    <td><b><h2>{{user.companyName}}</h2></b></td>
+    <td><b><h2>{{user.phone}}</h2></b></td>
+    <td>
+      <img src="{{user.certificate.url}}" height="200" width="250">
+    </td>
+    <td>
+      <img src="{{user.License.url}}" height="200" width="250">    
+    </td>
+    <td>
+      <a href="/deleteDriver/{{user.id}}" class="btn btn-danger"> Delete </a>
+    </td>
+  </tr>
+  {%endfor%}
+      
+  <tbody>
+ 
+  </tbody>
+</table>
+        
+        <script src="" async defer></script>
+        <style>
+          :root{
+            --main-color:#6283a1;
+            --black: #13131a;
+            --bg:#010103;
+            --border: .1rem solid rgb(4, 62, 80);
+        }
+        *{
+            font-family: 'Roboto',sans-serif;
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+
+        }
+        html::-webkit-scrollbar-thumb{
+            background: rgb(3, 1, 109);
+            border-radius: 5rem;
+
+        }
+          * {
+            font-family: sans-serif; /* Change your font family */
+          }
+          
+          .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1em;
+            min-width: 800px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            margin-left:50px;
+          }
+          
+          .content-table thead tr {
+            background-color: #AF2D18;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+          }
+          
+          .content-table th
+          {
+                      width: 350px;
+                      padding: 20px;
+                      margin: 20px auto;
+                      font-size: 1.6rem;
+
+                      
+                      
+                     
+                      
+          }
+          .content-table td {
+            padding: 20px 15px;
+            
+          }
+          
+          .content-table tbody tr {
+            border-bottom: 2px solid #dddddd;
+          }
+            .header{
+            background: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+
+        }
+        .header .logo img{
+            height: 6rem;
+            
+        }
+        .header .navbar a{
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            color:#fff;
+        }
+        .header .navbar a:hover{
+            color: #fff;
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+        </style>
+    </body>
+</html>

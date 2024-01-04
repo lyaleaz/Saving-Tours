@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'signup.css'%}">
+    <title>Singin Page</title>
+</head>
+<body style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="wrapper" style=" max-width: 900px;">
+                {% for massage in messages %}
+                <p class="alert alert-danger">{{message}}</p>
+                {% endfor %}
+                <div class="title" style="font-size: 25px;
+                 width: 800px;
+                background-color: rgb(26, 13, 51);
+                margin: auto;
+                color: #FFFFFF;
+                padding: 10px 0px 10px 0px;
+                text-align: center;
+                border-radius: 15px 15px 0px 0px;
+                  margin-left: 250px;
+                ">
+                    Singup Here
+                </div>
+                <div class="form" style="
+                background-color: rgba(172, 83, 83, 0.5);
+                width: 800px;
+                margin: auto;
+                padding: 10px;
+                margin-left: 250px;
+                ">
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>First Name</label>
+                        <input type="text" id="Fname" name="Fname">
+                    </div>
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>Last Name</label>
+                        <input type="text" id="Lname" name="Lname">
+
+                    </div>
+
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>User Name</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>Password</label>
+                        <input type="password" id="pass1" name="pass1">
+                    </div>
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>Confirm Password</label>
+                        <input type="password" id="pass2" name="pass2">
+                    </div>
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label>Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="inputfield">
+                        <input type="submit" class="btn" value="Register" style="
+                        width: 200%;
+                        padding:9px 10px;
+                        font-size: 25px;
+                        border: 0px;
+                        background: rgb(26, 13, 51);
+                        color: #fff;
+                        cursor: pointer;
+                        border-radius: 9px;
+                        outline: none;
+                        size: 16px;
+                        margin-left:500px;
+                        ">
+                    </div>
+                    {% for message in messages%}
+                    <p id="message">{{message}}</p>
+                    {%endfor%}
+                </div>
+            </div>
+        </form>
+ <style>
+
+
+
+    </style>
+    </body>
+</html>
+

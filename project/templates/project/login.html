@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Log in page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Gaming Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link rel="stylesheet" type="text/css" href="{% static 'login.css'%}">
+</head>
+
+<body style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+	<div class="padding-all" style="margin-left:600px; overflow: none;">
+		<div class="header" style="background-color: #FFFFFF; margin-center;
+		color: #AF2D18
+		overflow: hidden;">
+			<h1 > Wep Login Form</h1>
+		</div>
+
+			<div class="mail-form-agile" style="  background: #646569b7; margin-right;">
+				<form action="#" method="post">
+					<input type="text" name="name" placeholder="User Name  or  email..." required="" margin-center;/>
+					<input type="password"  name="password" class="padding" placeholder="Password" required="" margin-center; />
+					<input type="submit" value="submit" style="
+                   		 width: 200px;
+                         padding: 8px ;
+                        font-size: 25px;
+                         border: 0px;
+                         background: rgb(13, 1, 69);
+                         color: #fff;
+                         cursor: pointer;
+                          border-radius: 3px;
+                            outline: none;
+                         size: 16px;
+						 margin-left:280px;
+                    ">
+				</form>
+			</div>
+			{% for message in messages%}
+			<p id="message">{{message}}</p>
+			{%endfor%}
+		  <div class="clear"> </div>
+	</div>
+	
+</body>
+
+</html>

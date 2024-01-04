@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Driver Home Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+  <body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+  <form action="" method="POST">
+        {% csrf_token %}
+    <header class="header">
+    <nav class="navbar">
+
+    <a href="/logoutUser">LogOut</a>
+    <a href="/DriverNotification">Notification</a>
+    <a href="{% url 'DriverChangePassword' user.id %}">Change Password</a>
+     <a href="/MyDrive">My Drive</a>
+
+       </nav>    
+       </header>
+        <script src="" async defer></script>
+        <style>
+            .textHomePage {
+            background-color: rgb(251 184 172);
+    color: white;
+    text-align: center;
+    border: 2px solid rgb(3 1 109);
+    margin: 20px;
+    padding: 20px;
+    font-size: x-large;
+}
+        :root{
+            --main-color:#6283a1;
+            --black: #13131a;
+            --bg:#010103;
+            --border: .1rem solid rgb(4, 62, 80);
+        }
+        *{
+            font-family: 'Roboto',sans-serif;
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+
+        }
+        html::-webkit-scrollbar-thumb{
+            background: rgb(3, 1, 109);
+            border-radius: 5rem;
+
+        }
+
+        body{
+            background:#6283a1;
+        }
+       .header  .navbar a{
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            color:#fff;
+            
+
+
+        }
+         .header{
+            background: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+          
+
+        }
+       .header  .navbar a:hover{
+            color: var(--main-color);
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+    
+
+        </style>
+        <br>  <br>  <br>
+        <br>  <br>  <br>
+
+        <br>  <br>  <br>
+        <div class="textHomePage">
+            <p><em>Welcome To Driver's Page!!!</em></p>
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'admin.css'%}">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Upload file</title>
+    </head>
+    <body style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+      <form action="" method="post" enctype="multipart/form-data">
+        <br>
+        <div class="wrapper" >
+          {% for massage in messages %}
+          <p class="alert alert-danger">{{message}}</p>
+          {% endfor %}
+          <div class="title"  style="font-size: 25px;
+           width: 800px;
+          background-color: rgb(26, 13, 51);
+          margin: auto;
+          color: #FFFFFF;
+          padding: 10px 0px 10px 0px;
+          text-align: center;
+          border-radius: 15px 15px 0px 0px;
+            margin-left: 250px;
+          ">
+              Some Information
+          </div>
+         
+          <div class="formm" style="
+                
+          background-color: rgba(172, 83, 83, 0.5);
+          width: 800px;
+          margin: auto;
+          padding: 10px 0px 10px 0px;
+          margin-left: 250px;
+          ">
+
+         <label style="  margin-left: 25px;
+         margin-top: 30px;
+         width: 125px;
+       color: #FFFFFF;
+        font-size: 17px;
+        font-weight: 700;" >Worker's certificate<br></label>
+
+       <input type ="file" name="certificate"  style="  margin-left: 25px;
+       margin-top: 30px;
+       width: 125px;
+       color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;" >
+       <br>
+       
+       <br>
+       <br>
+       <label style="  margin-left: 25px;
+       margin-top: 30px;
+       width: 125px;
+     color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 700;">Driving License<br></label>
+
+       <input type ="file" name="License"  style="  margin-left: 25px;
+       margin-top: 30px;
+       width: 125px;
+       color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;">
+       <br>
+       <br>
+       <br>
+       <button type="submit" style=" display: inline-block;
+       padding: 5px 25px;
+       font-size: 24px;
+       cursor: pointer;
+       text-align: center;
+       text-decoration: none;
+       outline: none;
+       color: #fff;
+       background-color: #d2bad3;
+       border: none;
+       border-radius: 15px;
+       box-shadow: 0 9px #999;">submit</button>
+
+        <script src="" async defer></script>
+        </div>
+       </form>
+    </body>
+</html>

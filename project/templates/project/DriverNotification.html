@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Driver Home Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+     <body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+  <form action="" method="POST">
+        {% csrf_token %}
+    <header class="header">
+    <nav class="navbar">
+    <a href="/DriverHomePage">Home</a>
+    <a href="/logoutUser">LogOut</a>
+    <a href="/MyDrive">My Drive</a>
+
+  
+  
+
+
+       </nav>    
+
+
+
+       </header>
+        <script src="" async defer></script>
+        <div class="wrapper">
+            <div class="header1">
+                <p>Notification To The Bus's Passenger</p>
+            </div>
+            <form action="#" method="post">
+             <div class="container">
+                <label for="BusNum" style="font-size: 20px;">  line number: </label>
+                <input type="text" id="BusNum" name="BusNum"><br><br>
+                <label for="Notification" style="font-size: 20px;">  Enter The Notification: </label>
+                <input type="text" id="Notification" name="Notification"><br><br>
+                <input type="Submit" class="btn submit-btn" value="Send Notification">
+             </div>    
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <style>
+             *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+
+        }
+        .contact-form{
+            width: 250px;
+
+        }
+     .container.h1
+     {
+             width: 800px;
+       background-color: rgb(0,0,0,6);
+       margin: auto;
+       color: #FFFFFF;
+       padding: 10px 0px 10px 0px;
+       text-align: center;
+       border-radius: 15px 15px 0px 0px;
+     }
+        input textarea{
+            width: 100%;
+            background-color: aliceblue;
+            border: none;
+            padding: 0.5rem;
+
+        }
+        input:focus{
+            outline: none;
+
+        }
+        .tag{
+            padding: 5px 0;
+            font-size: 20px;
+        }
+        .container{
+            margin-bottom:350px;
+            background-color: #646569b7;
+            padding: 5rem;
+            border-radius: 10px;
+            overflow: none;
+            display: flex;
+
+        }
+         .submit-btn{
+            background-color: #AF2D18;
+            border: none;
+            width: 200x%;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        .submit-btn:hover{
+            background-color: #6283a1;
+        }
+            .header1{
+            width: 1000px;
+            padding: 20px;
+          
+            margin: 25px auto;
+            border-radius: 5px;
+            text-align: center;
+        
+        }
+        .header1 p{
+            font-size:  25px;
+            text-transform: uppercase;
+            font-weight: 800;
+             margin-top: -1px;
+        }
+        :root{
+            --main-color:#6283a1;
+            --black: #13131a;
+            --bg:#010103;
+            --border: .1rem solid rgb(4, 62, 80);
+        }
+        *{
+            font-family: 'Roboto',sans-serif;
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+
+        }
+        html::-webkit-scrollbar-thumb{
+            background: rgb(3, 1, 109);
+            border-radius: 5rem;
+
+        }
+
+        body{
+            background:#6283a1;
+        }
+       .header  .navbar a{
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            color:#fff;
+
+
+        }
+         .header{
+            background-color: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+
+        }
+       .header  .navbar a:hover{
+            color: var(--main-color);
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+    
+
+        </style>
+    </body>
+</html>

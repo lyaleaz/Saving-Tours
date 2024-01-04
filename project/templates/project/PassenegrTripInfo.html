@@ -1,0 +1,171 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    </head>
+<body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="static/logo.png" alt="">
+            </a>
+            <nav class="navbar">
+                <a href="/PassengerHomePage">Home</a>
+                <a href="/PassengerNotification">Notification</a>
+                <a href="/PMyTrip">My Trip</a>
+                <a href="{% url 'PassengerPassword' user.id %}">Change Password</a>
+                <a href="/logoutUser">LogOut</a>
+            </nav>
+        </header>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="wrapper" style=" max-width: 900px;">
+                {% for massage in messages %}
+                <p class="alert alert-danger">{{message}}</p>
+                {% endfor %}
+            
+                <div class="form" style="
+               
+    background-color: rgba(172, 83, 83, 0.5);
+    width: 750px;
+    margin: auto;
+    padding: 45px;
+    padding-left: 10px;
+    margin-left: 500px;
+    margin-top: 150px;
+                ">
+
+                    <div class="outputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #ffffff;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label><u>Bus Line</u></label>
+                        <h3>{{trip.BusLine}}</h3>
+                    </div>
+
+                    <div class="outputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label><u>From</u></label>
+                        
+                        <h3>{{trip.From}}</h3>
+
+                    </div>
+
+
+                    <div class="outputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label><u>To</u></label>
+                        <h3>{{trip.To}}</h3>
+                    </div>
+
+                   
+
+                    <div class="inputfield" style="  margin-left: 25px;
+                                                     margin-top: 30px;
+                                                     width: 125px;
+                                                     color: #FFFFFF;
+                                                    font-size: 17px;
+                                                    font-weight: 700;">
+                        <label><u>Date & Time</u></label>
+                        <h3>{{trip.DateTime}}</h3>
+                    </div>
+                    </div>
+
+                    
+                    {% for message in messages%}
+                    {%endfor%}
+                </div>
+            </div>
+        </form>
+
+    </body>
+</form>
+
+
+<style>
+     
+        :root{
+            --main-color:#6283a1;
+            --black: #13131a;
+            --bg:#010103;
+            --border: .1rem solid rgb(4, 62, 80);
+        }
+        *{
+            font-family: 'Roboto',sans-serif;
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+
+        }
+        html::-webkit-scrollbar-thumb{
+            background: rgb(3, 1, 109);
+            border-radius: 5rem;
+
+        }
+
+        body{
+            background:#AF2D18;
+        }
+        .header{
+            background: #AF2D18;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(--border);
+            position: fixed;
+            top: 0; left:0; right:0;
+            z-index: 1000;
+
+        }
+        .header .logo img{
+            height: 6rem;
+            
+        }
+        .header .navbar a{
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            color:#fff;
+        }
+        .header .navbar a:hover{
+            color: #fff;
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+    
+
+
+
+</style>
+    
+</html>

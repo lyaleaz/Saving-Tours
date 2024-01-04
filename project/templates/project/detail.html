@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Details Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+.tab {
+            tab-size: 4;
+        }
+.content-table{
+  border-collapse: collapse;
+  font-size: 1.2em;
+  height: 10px;
+  width: 700px;
+  color : black;
+  overflow: hidden;
+  margin-left:550px;
+}
+
+
+        </style>
+    </head>
+  <body  style="background-image:url('{% static 'img/unnamed.jpg' %}'); background-repeat: no-repeat; background-size:100%;">
+      <br>
+    <div>
+      <style>
+        div{
+          height: 100px;
+          color: #AF2D18;
+          text-decoration: underline;
+          margin-left:300px;
+          overflow: hidden;
+     }
+     </style>
+    <h1 > Detail Page </h1>
+  
+  </div>
+    
+    <br>
+    <table class='content-table'>
+<td>
+        <pre class="tab"><h2><u>CNAME </u> :        {{user.companyName}}</h2></pre>
+        <pre class="tab"><h2><u>EMAIL </u> :        {{user.email}} </h2></pre>
+        <pre class="tab"><h2><u>PHONE</u> :         {{user.phone}} </h2></pre>
+        <pre class="tab"><h2><u>IS_OK</u> :         {{user.is_ok}} </h2></pre>
+        <pre class="tab"><h2><u>License</u> : </h2>                         <img src="{{user.License.url}}" height="250" width="300" ></pre>
+        <pre class="tab"><h2><u>Certificate</u> : </h2>                     <img src="{{user.certificate.url}}" height="250" width="300" ></pre>
+
+</td>
+    </table>
+    <script src="" async defer></script>
+  </body>
+</html>
